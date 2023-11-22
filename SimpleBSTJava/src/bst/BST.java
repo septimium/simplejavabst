@@ -74,25 +74,4 @@ public class BST<T extends Comparable<T>>{
             preOrderTraversal(node.right);
         }
     }
-
-    public static void main(String[] args) {
-        BST<Integer> tree = new BST<Integer>();
-        tree.insert(5);
-        tree.insert(3);
-        tree.insert(7);
-        tree.insert(2);
-        tree.insert(4);
-        tree.insert(6);
-        tree.insert(8);
-
-        System.out.println("In-order traversal:");
-        tree.display();
-        System.out.println("Post-order traversal:");
-        tree.display3();
-        System.out.println("Pre-order traversal:");
-        tree.display2();
-
-        System.out.println("Find 6: " + tree.find(6)); // true
-        System.out.println("Find 9: " + tree.find(9)); // false
-    }
 }
