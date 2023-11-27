@@ -12,29 +12,25 @@ public class BST<T extends Comparable<T>>{
             right = null;
             left = null;
         }
-
     }
 
     private Node<T> root;
+    
     public void insert(T val){
         root = insertRec(root, val);
     }
 
     public Node<T> insertRec(Node<T> root, T val){
-
         if (root == null){
             root = new Node<T>(val);
             return root;
         }
-
         if(val.compareTo(root.value) < 0){
             root.left = insertRec(root.left, val);
         }
-
         else if(val.compareTo(root.value) > 0){
             root.right = insertRec(root.right, val);
         }
-
         return root;
     }
 
@@ -43,19 +39,15 @@ public class BST<T extends Comparable<T>>{
     }
 
     private boolean findRec(Node<T> root, T val) {
-
         if (root == null) {
             return false;
         }
-
         if (val.equals(root.value)) {
             return true;
         }
-
         if (val.compareTo(root.value) < 0) {
             return findRec(root.left, val);
         }
-
         else {
             return findRec(root.right, val);
         }
